@@ -1,0 +1,20 @@
+export ELASTICSEARCH_HOST="192.168.1.14"
+export ELASTICSEARCH_PORT=9200
+export ELASTICSEARCH_USERNAME="elastic"
+export ELASTICSEARCH_PW="elastic"
+export ELASTICSEARCH_MAX_RESULT=1000000000
+
+export RABBITMQ_HOST="192.168.1.14"
+export RABBITMQ_MANAGEMENT_PORT=15672
+export RABBITMQ_OPERATION_PORT=5672
+export RABBITMQ_QUEUE_NAME_LISTEN="modsecurity-apply"
+export RABBITMQ_USERNAME="admin"
+export RABBITMQ_PW="admin"
+
+export ANSIBLE_FIREWALL_HOST="192.168.1.9"
+export ANSIBLE_FIREWALL_USERNAME="root"
+export ANSIBLE_FIREWALL_PW="cxt"
+export ANSIBLE_CRS_PATH_DIR="/home/cxt/nginx/modsec_rule_testing/rules"
+export ANSIBLE_MODSEC_CONAME="modsec"
+export ANSIBLE_DATA_DIR="/root/Receivers/config/."
+export ANSIBLE_INVENTORY="/root/Receivers/config/hosts"
