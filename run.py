@@ -174,7 +174,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
-            ].__len__() > 1:
+            ].__len__() > 2:
                 is_duplicated = True
             else:
                 anomaly_score = ip.get('anomaly_score')
@@ -248,7 +248,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] is None
-            ].__len__() > 1:
+            ].__len__() > 2:
                 is_duplicated = True
             else:
                 anomaly_score = ip.get('anomaly_score')
@@ -287,7 +287,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] is None
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
-            ].__len__() > 1:
+            ].__len__() > 2:
                 is_duplicated = True
             else:
                 anomaly_score = ip.get('anomaly_score')
