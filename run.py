@@ -105,6 +105,12 @@ def connect_elasticsearch():
         elasticsearch_response.indices.create(index="responser-modsecurity-executions", body=index_settings)
         info(msg='Created "responser-modsecurity-executions"')
     info(msg='"responser-modsecurity-executions" [OK]')
+    info(msg='Checking "responser-modsecurity-errorlogs" index...')
+    if not elasticsearch_response.indices.exists(index='responser-modsecurity-errorlogs'):
+        info(msg='Creating "responser-modsecurity-errorlogs"')
+        elasticsearch_response.indices.create(index="responser-modsecurity-errorlogs", body=index_settings)
+        info(msg='Created "responser-modsecurity-errorlogs"')
+    info(msg='"responser-modsecurity-errorlogs" [OK]')
     return elasticsearch_response
 
 
@@ -174,6 +180,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 2:
                 is_duplicated = True
             else:
@@ -194,6 +201,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] is None
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 1:
                 is_duplicated = True
             else:
@@ -209,6 +217,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] is None
                 and entity['_source']['detail_hashed_rule'] is None
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 1:
                 is_duplicated = True
             else:
@@ -226,6 +235,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] is None
                 and entity['_source']['detail_hashed_payload'] is None
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 1:
                 is_duplicated = True
             else:
@@ -248,6 +258,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] is None
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 2:
                 is_duplicated = True
             else:
@@ -268,6 +279,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] is None
                 and entity['_source']['detail_hashed_rule'] == hashed_rule
                 and entity['_source']['detail_hashed_payload'] is None
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 1:
                 is_duplicated = True
             else:
@@ -287,6 +299,7 @@ def processor(elasticsearch_response: Elasticsearch):
                 if entity['_source']['detail_ip'] == ip_source
                 and entity['_source']['detail_hashed_rule'] is None
                 and entity['_source']['detail_hashed_payload'] == hashed_payload
+                and entity['_source']['secrule_id'] is not None
             ].__len__() > 2:
                 is_duplicated = True
             else:

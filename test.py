@@ -10,19 +10,19 @@ async def send_request(url, session, method="POST", body=None):
 
 async def send_multiple_requests():
     urls = [
-        "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test",
-        # "http://192.168.1.14:9948/modsecurity/test"
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test",
+        "http://192.168.1.9:9948/modsecurity/test"
     ]
     
     # Dữ liệu gửi kèm theo mỗi request
     bodies = [
         {
-        "data": {
+            "data": {
                 "_ip_root_cause_": "192.168.1.2",
                 "_message_": "Detected from default-xss-analyzer analyzer",
                 "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
@@ -32,72 +32,72 @@ async def send_multiple_requests():
             "reason": "Success: Potential Cross Site Scripting detected",
             "type": "xss_analyzer"
         },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
-        #         "field_name": "request_body",
-        #         "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "",
-        #         "field_name": "request_body",
-        #         "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "192.168.1.2",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "",
-        #         "field_name": "request_body",
-        #         "field_value": ""
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "192.168.1.2",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
-        #         "field_name": "request_body",
-        #         "field_value": ""
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
-        #         "field_name": "request_body",
-        #         "field_value": ""
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # },
-        # {
-        # "data": {
-        #         "_ip_root_cause_": "192.168.1.2",
-        #         "_message_": "Detected from default-xss-analyzer analyzer",
-        #         "by_rule": "",
-        #         "field_name": "request_body",
-        #         "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
-        #     },
-        #     "reason": "Success: Potential Cross Site Scripting detected",
-        #     "type": "xss_analyzer"
-        # }
+        {
+        "data": {
+                "_ip_root_cause_": "",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
+                "field_name": "request_body",
+                "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        },
+        {
+        "data": {
+                "_ip_root_cause_": "",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "",
+                "field_name": "request_body",
+                "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        },
+        {
+        "data": {
+                "_ip_root_cause_": "192.168.1.2",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "",
+                "field_name": "request_body",
+                "field_value": ""
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        },
+        {
+        "data": {
+                "_ip_root_cause_": "192.168.1.2",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
+                "field_name": "request_body",
+                "field_value": ""
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        },
+        {
+        "data": {
+                "_ip_root_cause_": "",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "(?i)<.*?(=|:|>)(.*?['\"]|>|.*?)",
+                "field_name": "request_body",
+                "field_value": ""
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        },
+        {
+        "data": {
+                "_ip_root_cause_": "192.168.1.2",
+                "_message_": "Detected from default-xss-analyzer analyzer",
+                "by_rule": "",
+                "field_name": "request_body",
+                "field_value": "\"`'><script>ï¿®javascript:alert(1)</script>"
+            },
+            "reason": "Success: Potential Cross Site Scripting detected",
+            "type": "xss_analyzer"
+        }
     ]
 
     async with aiohttp.ClientSession() as session:

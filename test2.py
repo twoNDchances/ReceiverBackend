@@ -3,7 +3,7 @@ with open(file='payload.txt', mode='r') as payload:
 
 import requests
 
-url = "http://192.168.1.12:9947/xsss/default-xss-analyzer"
+url = "http://192.168.1.9:9947/xsss/default-xss-analyzer"
 
 data = {
     "@timestamp": "2024-11-28T22:30:28.000Z",
